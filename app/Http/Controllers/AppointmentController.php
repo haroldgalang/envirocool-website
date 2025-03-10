@@ -62,4 +62,10 @@ class AppointmentController extends Controller
 
         return redirect()->route('appointments.index');
     }
+
+    public function show(string $id)
+    {
+        $appointment = Appointment::find($id);
+        return view('appointments.show', compact('appointment'));
+    }
 }
